@@ -3,6 +3,8 @@ package co.edu.unaula.dataStructure.menu;
 import co.edu.unaula.dataStructure.enums.Options;
 import co.edu.unaula.dataStructure.helpers.Input;
 
+import static co.edu.unaula.dataStructure.helpers.Colors.DEFAULT_COLOR;
+
 public class MenuOptions {
 
     public static final String ansiWhite = "\u001B[37m";
@@ -22,7 +24,7 @@ public class MenuOptions {
                 message += "\n" + (i+1) + " " + defaultOptions[i];
             }
         } else {
-            message = description[1];
+            message = DEFAULT_COLOR + description[1];
             for (int i = 0; i < doubleOptions.length; i++) {
                 message += "\n" + (i+1) + " " + doubleOptions[i];
             }

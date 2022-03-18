@@ -2,16 +2,16 @@ package co.edu.unaula.dataStructure.lists;
 
 import co.edu.unaula.dataStructure.nodes.DoublyListNodes;
 
+import static co.edu.unaula.dataStructure.helpers.Colors.ERROR_COLOR;
+
 public class DoublyList {
 
-    public static final String ansiRed = "\u001B[31m";
-
-    public static final String msgNobody = "No hay un nodos en la lista para eliminar.";
-    public static final String msgPrevious = "Elemento previo: ";
-    public static final String msgNull = "null";
-    public static final String msgData = "\nDato: ";
-    public static final String msgNextElement = "\nElemento siguiente: ";
-    public static final String msgWithoutNodes = "No hay nodos para mostrar. \n";
+    private final String MSG_NOBODY = "No hay un nodos en la lista para eliminar.";
+    private final String MSG_PREVIOUS = "Elemento previo: ";
+    private final String MSG_NULL = "null";
+    private final String MSG_DATA = "\nDato: ";
+    private final String MSG_NEXT_ELEMENT = "\nElemento siguiente: ";
+    private final String MSG_WITHOUT_NODES = "No hay nodos para mostrar. \n";
 
     private DoublyListNodes tail;
     private DoublyListNodes head;
@@ -71,7 +71,7 @@ public class DoublyList {
 
         try {
             if (isEmpty()){
-                System.out.println(ansiRed+msgNobody);
+                System.out.println(ERROR_COLOR + MSG_NOBODY);
                 return null;
             }
 
@@ -101,25 +101,25 @@ public class DoublyList {
         try {
 
             if (isEmpty()){
-                System.out.println(ansiRed+msgWithoutNodes);
+                System.out.println(ERROR_COLOR + MSG_WITHOUT_NODES);
             }
 
             DoublyListNodes current = tail;
             String text;
 
             while (current != null){
-                text = msgPrevious;
+                text = MSG_PREVIOUS;
 
                 if(current.getPreviousEle() == null){
-                    text = text + msgNull;
+                    text = text + MSG_NULL;
                 } else {
                     text = text + current.getPreviousEle().getData().toString();
                 }
 
-                text = text + msgData + current.getData().toString() + msgNextElement;
+                text = text + MSG_DATA + current.getData().toString() + MSG_NEXT_ELEMENT;
 
                 if(current.getNextEle() == null){
-                    text = text + msgNull;
+                    text = text + MSG_NULL;
                 } else {
                     text = text + current.getNextEle().getData().toString();
                 }

@@ -3,17 +3,15 @@ package co.edu.unaula.dataStructure.helpers;
 import co.edu.unaula.dataStructure.enums.ListTypes;
 import co.edu.unaula.dataStructure.enums.Options;
 import lombok.NoArgsConstructor;
-
 import java.util.Scanner;
+import static co.edu.unaula.dataStructure.helpers.Colors.ERROR_COLOR;
 
 @NoArgsConstructor
 public class Input {
 
-    public static final String ansiRed = "\u001B[31m";
-
     private Scanner read = new Scanner(System.in).useDelimiter("\n");
-    public static final String smgEmpty = "El texto no puede quedar vacío.";
-    private final String optionMsg = "Ha ingresado una opción incorrecta.";
+    private final String MSG_EMPTY = "El texto no puede quedar vacío.";
+    private final String MSG_OPTION = "Ha ingresado una opción incorrecta.";
 
     public Options inputOption(String message, boolean type) {
         try {
@@ -42,7 +40,7 @@ public class Input {
                             break;
 
                         default:
-                            System.out.println(ansiRed+optionMsg);
+                            System.out.println(ERROR_COLOR+ MSG_OPTION);
                             break;
 
                     }
@@ -66,7 +64,7 @@ public class Input {
                             break;
 
                         default:
-                            System.out.println(ansiRed+optionMsg);
+                            System.out.println(ERROR_COLOR+ MSG_OPTION);
                             break;
 
                     }
@@ -107,7 +105,7 @@ public class Input {
                         break;
 
                     default:
-                        System.out.println(ansiRed+optionMsg);
+                        System.out.println(ERROR_COLOR + MSG_OPTION);
                         break;
 
                 }
@@ -129,7 +127,7 @@ public class Input {
                 data = read.next();
 
                 if(data.equals("")) {
-                    System.out.println(ansiRed+smgEmpty);
+                    System.out.println(ERROR_COLOR + MSG_EMPTY);
                 }
             }
 

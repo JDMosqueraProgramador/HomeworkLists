@@ -3,6 +3,9 @@ package co.edu.unaula.dataStructure.lists;
 import co.edu.unaula.dataStructure.nodes.Nodes;
 import lombok.Getter;
 
+import static co.edu.unaula.dataStructure.helpers.Colors.DEFAULT_COLOR;
+import static co.edu.unaula.dataStructure.helpers.Colors.ERROR_COLOR;
+
 public class SimpleList {
 
     public static final String ansiRed = "\u001B[31m";
@@ -13,10 +16,9 @@ public class SimpleList {
     private Nodes newNode;
     private @Getter int size;
 
-    private final String emptyMsg = "La lista está vacía.";
-    private final String dataMsg = "Dato ";
-    private final String listMsg = " De la lista:";
-
+    private final String MSG_EMPTY = "La lista está vacía.";
+    private final String MSG_DATA = "Dato ";
+    private final String MSG_LIST = " De la lista:";
 
     public SimpleList() {
         this.firstNode = null;
@@ -85,14 +87,14 @@ public class SimpleList {
     public String print(){
 
         if(isEmpty()) {
-            return ansiRed+emptyMsg;
+            return ERROR_COLOR + MSG_EMPTY;
         }
 
         Nodes auxNode = firstNode;
         String message = "";
 
         for (int i = 0; i < size; i++) {
-            message = message + ansiWhite+dataMsg + (i+1) + listMsg;
+            message = message + DEFAULT_COLOR + MSG_DATA + (i+1) + MSG_LIST;
             message = message + " " + auxNode.getData() + "\n";
 
             auxNode = auxNode.getPrompter();

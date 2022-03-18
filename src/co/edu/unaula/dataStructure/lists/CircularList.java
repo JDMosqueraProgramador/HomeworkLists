@@ -11,8 +11,8 @@ public class CircularList {
     private CircularListNodes lastNode;
     private CircularListNodes newNode;
 
-    public static final String msgEmpty = "La lista está vacía. \n";
-    public static final String smgNobody = "No hay nodos para eliminar \n";
+    private final String MSG_EMPTY = "La lista está vacía. \n";
+    private final String MSG_NOBODY = "No hay nodos para eliminar \n";
 
     public CircularList() {
         firstNode = null;
@@ -50,7 +50,7 @@ public class CircularList {
 
         try {
             if(isEmpty()) {
-                System.out.println(ansiRed+smgNobody);
+                System.out.println(ERROR_COLOR + MSG_NOBODY);
                 return null;
             }
 
@@ -91,7 +91,7 @@ public class CircularList {
                 } while (aux != firstNode);
 
             } else {
-                System.out.println(ansiRed+msgEmpty);
+                System.out.println(ERROR_COLOR+ MSG_EMPTY);
             }
         } catch (Exception e) {
             throw e;
