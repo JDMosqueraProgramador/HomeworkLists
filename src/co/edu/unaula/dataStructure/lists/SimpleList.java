@@ -4,12 +4,15 @@ import co.edu.unaula.dataStructure.nodes.Nodes;
 import lombok.Getter;
 
 public class SimpleList {
+
+    public static final String ansiRed = "\u001B[31m";
+    public static final String ansiWhite = "\u001B[37m";
+
     private Nodes firstNode;
     private  Nodes lastNode;
     private Nodes newNode;
     private @Getter int size;
 
-    private final String lnMsg = "\n";
     private final String emptyMsg = "La lista está vacía.";
     private final String dataMsg = "Dato ";
     private final String listMsg = " De la lista:";
@@ -82,15 +85,15 @@ public class SimpleList {
     public String print(){
 
         if(isEmpty()) {
-            return emptyMsg;
+            return ansiRed+emptyMsg;
         }
 
         Nodes auxNode = firstNode;
         String message = "";
 
         for (int i = 0; i < size; i++) {
-            message = message + dataMsg + (i+1) + listMsg;
-            message = message + " " + auxNode.getData() + lnMsg;
+            message = message + ansiWhite+dataMsg + (i+1) + listMsg;
+            message = message + " " + auxNode.getData() + "\n";
 
             auxNode = auxNode.getPrompter();
         }

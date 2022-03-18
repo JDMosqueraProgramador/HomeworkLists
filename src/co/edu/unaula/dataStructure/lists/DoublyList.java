@@ -2,10 +2,17 @@ package co.edu.unaula.dataStructure.lists;
 
 import co.edu.unaula.dataStructure.nodes.DoublyListNodes;
 
-
 public class DoublyList {
 
-    public static final String smgNobody = "No hay un nodos en la lista para eliminar.";
+    public static final String ansiRed = "\u001B[31m";
+
+    public static final String msgNobody = "No hay un nodos en la lista para eliminar.";
+    public static final String msgPrevious = "Elemento previo: ";
+    public static final String msgNull = "null";
+    public static final String msgData = "\nDato: ";
+    public static final String msgNextElement = "\nElemento siguiente: ";
+    public static final String msgWithoutNodes = "No hay nodos para mostrar. \n";
+
     private DoublyListNodes tail;
     private DoublyListNodes head;
     private DoublyListNodes newNode;
@@ -64,7 +71,7 @@ public class DoublyList {
 
         try {
             if (isEmpty()){
-                System.out.println(smgNobody);
+                System.out.println(ansiRed+msgNobody);
                 return null;
             }
 
@@ -92,22 +99,27 @@ public class DoublyList {
 
     public void printTail(){
         try {
+
+            if (isEmpty()){
+                System.out.println(ansiRed+msgWithoutNodes);
+            }
+
             DoublyListNodes current = tail;
             String text;
 
             while (current != null){
-                text = "Elemento previo: ";
+                text = msgPrevious;
 
                 if(current.getPreviousEle() == null){
-                    text = text + "null";
+                    text = text + msgNull;
                 } else {
                     text = text + current.getPreviousEle().getData().toString();
                 }
 
-                text = text + "\nDato: " + current.getData().toString() + "\nElemento siguiente: ";
+                text = text + msgData + current.getData().toString() + msgNextElement;
 
                 if(current.getNextEle() == null){
-                    text = text + "null";
+                    text = text + msgNull;
                 } else {
                     text = text + current.getNextEle().getData().toString();
                 }

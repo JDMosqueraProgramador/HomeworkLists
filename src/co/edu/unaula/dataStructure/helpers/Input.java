@@ -9,6 +9,8 @@ import java.util.Scanner;
 @NoArgsConstructor
 public class Input {
 
+    public static final String ansiRed = "\u001B[31m";
+
     private Scanner read = new Scanner(System.in).useDelimiter("\n");
     public static final String smgEmpty = "El texto no puede quedar vacío.";
     private final String optionMsg = "Ha ingresado una opción incorrecta.";
@@ -40,7 +42,7 @@ public class Input {
                             break;
 
                         default:
-                            System.out.println(optionMsg);
+                            System.out.println(ansiRed+optionMsg);
                             break;
 
                     }
@@ -64,7 +66,7 @@ public class Input {
                             break;
 
                         default:
-                            System.out.println(optionMsg);
+                            System.out.println(ansiRed+optionMsg);
                             break;
 
                     }
@@ -105,7 +107,7 @@ public class Input {
                         break;
 
                     default:
-                        System.out.println(optionMsg);
+                        System.out.println(ansiRed+optionMsg);
                         break;
 
                 }
@@ -127,7 +129,7 @@ public class Input {
                 data = read.next();
 
                 if(data.equals("")) {
-                    System.out.println(smgEmpty);
+                    System.out.println(ansiRed+smgEmpty);
                 }
             }
 

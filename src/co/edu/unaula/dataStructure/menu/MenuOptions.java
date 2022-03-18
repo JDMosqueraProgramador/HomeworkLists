@@ -5,9 +5,11 @@ import co.edu.unaula.dataStructure.helpers.Input;
 
 public class MenuOptions {
 
+    public static final String ansiWhite = "\u001B[37m";
+
     private final String[] defaultOptions = {"Agregar nodos","Eliminar nodo", "Imprimir nodos", "Regresar al menú principal"};
     private final String[] doubleOptions = {"Agregar nodo al inicio", "Agregar nodo al final","Eliminar nodo", "Imprimir nodos", "Regresar al menú principal"};
-    private final String[] description = {"MENÚ DE LISTA SIMPLE/CIRCULAR", "MENÚ DE LISTA DOBLE"};
+    private final String[] description = {"\n----MENÚ DE LISTA SIMPLE/CIRCULAR----", "\n----MENÚ DE LISTA DOBLE----"};
 
     public Options showMenu(boolean type) {
 
@@ -15,7 +17,7 @@ public class MenuOptions {
         String message;
 
         if(type) {
-            message = description[0];
+            message = ansiWhite+ description[0];
             for (int i = 0; i < defaultOptions.length; i++) {
                 message += "\n" + (i+1) + " " + defaultOptions[i];
             }

@@ -11,6 +11,7 @@ import co.edu.unaula.dataStructure.enums.Options;
 
 public class Main {
 
+    public static final String ansiGreen = "\u001B[32m";
     private static String data = "";
     private static Input input = new Input();
     private static MenuLists menuLists = new MenuLists();
@@ -21,8 +22,8 @@ public class Main {
     private static Object response = null;
 
     private static final String dataMsg = "Ingrese el dato para la lista: ";
-    private static final String[] addMsg = {"Se produjo un error. No se agregó el nodo.", "Nodo agregado."};
-    private static final String[] delMsg = {"Se produjo un error. No se eliminó el nodo.", "El último nodo ha sido eliminado."};
+    private static final String[] addMsg = {"Se produjo un error. No se agregó el nodo.\n", "Nodo agregado.\n"};
+    private static final String[] delMsg = {"Se produjo un error. No se eliminó el nodo.\n", "El último nodo ha sido eliminado.\n"};
 
     public static void main(String[] args) {
         try {
@@ -73,7 +74,7 @@ public class Main {
 
                         }
 
-                        System.out.println(addMsg[(response == null) ? 0 : 1]);
+                        System.out.println(ansiGreen+addMsg[(response == null) ? 0 : 1]);
 
                         break;
 
@@ -82,7 +83,7 @@ public class Main {
                         data = input.inputString(dataMsg);
                         response = dbLst.addFirst(data);
 
-                        System.out.println(addMsg[(response == null) ? 0 : 1]);
+                        System.out.println(ansiGreen+addMsg[(response == null) ? 0 : 1]);
 
                         break;
 
@@ -101,7 +102,7 @@ public class Main {
 
                         }
 
-                        System.out.println(delMsg[(response == null) ? 0 : 1]);
+                        System.out.println(ansiGreen+delMsg[(response == null) ? 0 : 1]);
 
                         break;
                     case PRINT:

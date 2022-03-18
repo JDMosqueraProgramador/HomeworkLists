@@ -4,12 +4,15 @@ import co.edu.unaula.dataStructure.nodes.CircularListNodes;
 
 public class CircularList {
 
+    public static final String ansiRed = "\u001B[31m";
+
+
     private CircularListNodes firstNode;
     private CircularListNodes lastNode;
     private CircularListNodes newNode;
 
-    public static final String msgEmpty = "La lista está vacía.";
-    public static final String smgNobody = "No hay nodos para eliminar";
+    public static final String msgEmpty = "La lista está vacía. \n";
+    public static final String smgNobody = "No hay nodos para eliminar \n";
 
     public CircularList() {
         firstNode = null;
@@ -47,7 +50,7 @@ public class CircularList {
 
         try {
             if(isEmpty()) {
-                System.out.println(smgNobody);
+                System.out.println(ansiRed+smgNobody);
                 return null;
             }
 
@@ -88,7 +91,7 @@ public class CircularList {
                 } while (aux != firstNode);
 
             } else {
-                System.out.println(msgEmpty);
+                System.out.println(ansiRed+msgEmpty);
             }
         } catch (Exception e) {
             throw e;
