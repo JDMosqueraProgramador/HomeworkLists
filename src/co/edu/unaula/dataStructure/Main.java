@@ -13,7 +13,6 @@ import static co.edu.unaula.dataStructure.helpers.Colors.SUCCESS_COLOR;
 
 public class Main {
 
-    public static final String ansiGreen = "\u001B[32m";
     private static String data = "";
     private static Input input = new Input();
     private static MenuLists menuLists = new MenuLists();
@@ -76,7 +75,7 @@ public class Main {
 
                         }
 
-                        System.out.println(ansiGreen+addMsg[(response == null) ? 0 : 1]);
+                        System.out.println(SUCCESS_COLOR + addMsg[(response == null) ? 0 : 1]);
 
                         break;
 
@@ -85,7 +84,7 @@ public class Main {
                         data = input.inputString(MSG_DATA);
                         response = dbLst.addFirst(data);
 
-                        System.out.println(ansiGreen+addMsg[(response == null) ? 0 : 1]);
+                        System.out.println( SUCCESS_COLOR + addMsg[(response == null) ? 0 : 1]);
 
                         break;
 
@@ -104,7 +103,7 @@ public class Main {
 
                         }
 
-                        System.out.println(ansiGreen+delMsg[(response == null) ? 0 : 1]);
+                        System.out.println(SUCCESS_COLOR +delMsg[(response == null) ? 0 : 1]);
 
                         break;
                     case PRINT:

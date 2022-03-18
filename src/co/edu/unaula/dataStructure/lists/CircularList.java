@@ -2,10 +2,10 @@ package co.edu.unaula.dataStructure.lists;
 
 import co.edu.unaula.dataStructure.nodes.CircularListNodes;
 
+import static co.edu.unaula.dataStructure.helpers.Colors.ERROR_COLOR;
+
+
 public class CircularList {
-
-    public static final String ansiRed = "\u001B[31m";
-
 
     private CircularListNodes firstNode;
     private CircularListNodes lastNode;

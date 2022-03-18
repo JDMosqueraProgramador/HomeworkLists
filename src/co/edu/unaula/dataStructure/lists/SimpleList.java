@@ -8,9 +8,6 @@ import static co.edu.unaula.dataStructure.helpers.Colors.ERROR_COLOR;
 
 public class SimpleList {
 
-    public static final String ansiRed = "\u001B[31m";
-    public static final String ansiWhite = "\u001B[37m";
-
     private Nodes firstNode;
     private  Nodes lastNode;
     private Nodes newNode;

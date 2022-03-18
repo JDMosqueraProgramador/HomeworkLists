@@ -7,8 +7,6 @@ import static co.edu.unaula.dataStructure.helpers.Colors.DEFAULT_COLOR;
 
 public class MenuOptions {
 
-    public static final String ansiWhite = "\u001B[37m";
-
     private final String[] defaultOptions = {"Agregar nodos","Eliminar nodo", "Imprimir nodos", "Regresar al menú principal"};
     private final String[] doubleOptions = {"Agregar nodo al inicio", "Agregar nodo al final","Eliminar nodo", "Imprimir nodos", "Regresar al menú principal"};
     private final String[] description = {"\n----MENÚ DE LISTA SIMPLE/CIRCULAR----", "\n----MENÚ DE LISTA DOBLE----"};
@@ -19,7 +17,7 @@ public class MenuOptions {
         String message;
 
         if(type) {
-            message = ansiWhite+ description[0];
+            message = DEFAULT_COLOR + description[0];
             for (int i = 0; i < defaultOptions.length; i++) {
                 message += "\n" + (i+1) + " " + defaultOptions[i];
             }
